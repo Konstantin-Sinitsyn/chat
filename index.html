@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Chat</title>
+    <meta name="theme-color" content="#fff">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <link rel="shortcut icon" href="img/favicons/favicon.ico" type="image/x-icon">
+    <link rel="icon" sizes="16x16" href="img/favicons/favicon-16x16.png" type="image/png">
+    <link rel="icon" sizes="32x32" href="img/favicons/favicon-32x32.png" type="image/png">
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+
+<body>
+    <main class='main'>
+        <aside class="menu">
+            <div class="menu-user">
+                <div class="menu-user__photo"></div>
+
+                <h2 class="menu-user__name">Henry Jabbawockiez</h2>
+            </div>
+            <nav class="menu-nav">
+                <ul class="menu-nav__list">
+                    <li class="menu-nav__item"><img src="img/sprites/sprite.svg#icon-home" alt="icon-home"><a href="#"
+                            class="menu-nav__link">HOME</a>
+                    </li>
+                    <li class="menu-nav__item menu-nav__item_active"><img src="img/sprites/sprite.svg#icon-chat"
+                            alt="icon-chat"><a href="#" class="menu-nav__link">CHAT</a>
+                    </li>
+                    <li class="menu-nav__item"><img src="img/sprites/sprite.svg#icon-contact" alt="icon-contact"><a
+                            href="#" class="menu-nav__link">CONTACT</a></li>
+                    <li class="menu-nav__item"><img src="img/sprites/sprite.svg#icon-notifications"
+                            alt="icon-notifications"><a href="#" class="menu-nav__link">NOTIFICATIONS</a></li>
+                    <li class="menu-nav__item"><img src="img/sprites/sprite.svg#icon-calendar" alt="icon-calendar"><a
+                            href="#" class="menu-nav__link">CALENDAR</a></li>
+                    <li class="menu-nav__item"><img src="img/sprites/sprite.svg#icon-settings" alt="icon-settings"><a
+                            href="#" class="menu-nav__link">SETTINGS</a></li>
+
+                </ul>
+            </nav>
+            <div class="menu-exit">
+                <img class="menu-exit__icon" src="img/sprites/sprite.svg#icon-log_out" alt="icon-log_out"><a href="#"
+                    class="menu-exit__link">LOG OUT</a>
+            </div>
+        </aside>
+        <section class="chats">
+            <div class="chats-header">
+                <div class="chats-header__item">
+                    <h1 class="chats-header__title">Chats</h1>
+                    <div class="chats-filter dropdown">
+                        <button class="btn btn-secondary dropdown-toggle chats-filter__btn" type="button"
+                            id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            Recent Chats
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item chats-filter__item" href="#">Active chats</a></li>
+                            <li><a class="dropdown-item chats-filter__item" href="#">New chats</a></li>
+                        </ul>
+                    </div>
+                </div>
+                <div class="chats-header__item">
+                    <button type="button" class="btn btn-primary chats__button" data-bs-toggle="modal"
+                        data-bs-target="#newChatModal"><img src="img/sprites/sprite.svg#plus"
+                            alt="icon-notifications">Create
+                        new
+                        chat</button>
+                    <div class="modal fade" id="newChatModal" tabindex="-1" aria-labelledby="exampleModalLabel"
+                        aria-hidden="true">
+                        <div class="modal-dialog modal-dialog-centered modal-dialog-scrollable">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <h5 class="modal-title" id="newChatModalLabel">New chat</h5>
+                                    <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                        aria-label="Close"></button>
+                                </div>
+                                <div class="modal-body p-3 pt-0">
+                                    <button type="button" class="btn chats__button chats__button_modal"
+                                        data-bs-toggle="modal" data-bs-target="newContactModal"><img
+                                            src="img/sprites/sprite.svg#icon-contact" alt="icon-notifications">New
+                                        contact</button>
+                                    <button type="button" class="btn chats__button chats__button_modal"
+                                        data-bs-toggle="modal" data-bs-target="newContactModal"><img
+                                            src="img/sprites/sprite.svg#icon-contact" alt="icon-notifications">Create
+                                        group chat</button>
+                                    <ul class="dialog dialog__modal">
+                                        <li class='dialog__item'>
+                                            <div class="dialog-header dialog-header_modal">
+                                                <div class="dialog-header__item">
+                                                    <div class="dialog-header__photo">
+                                                        <img class='avatar' src="img/user-photo_4.png"
+                                                            alt="user-photo">
+                                                    </div>
+                                                </div>
+                                                <div class="dialog-header__item">
+                                                    <div class="dialog-header__info">
+                                                        <h2 class="title dialog-header__title"><a href="#"
+                                                                class="dialog-header__link">David
+                                                                Amrosa</a></h2>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class='dialog__item'>
+                                            <div class="dialog-header dialog-header_modal">
+                                                <div class="dialog-header__item">
+                                                    <div class="dialog-header__photo">
+                                                        <img class='avatar' src="img/user-photo_1.png"
+                                                            alt="user-photo">
+                                                    </div>
+                                                </div>
+                                                <div class="dialog-header__item">
+                                                    <div class="dialog-header__info">
+                                                        <h2 class="title dialog-header__title"><a href="#"
+                                                                class="dialog-header__link">Luy
+                                                                Robin</a></h2>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class='dialog__item'>
+                                            <div class="dialog-header dialog-header_modal">
+                                                <div class="dialog-header__item">
+                                                    <div class="dialog-header__photo">
+                                                        <img class='avatar' src="img/user-photo_2.png"
+                                                            alt="user-photo">
+                                                    </div>
+                                                </div>
+                                                <div class="dialog-header__item">
+                                                    <div class="dialog-header__info">
+                                                        <h2 class="title dialog-header__title"><a href="#"
+                                                                class="dialog-header__link">Jared
+                                                                Sunn</a></h2>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class='dialog__item'>
+                                            <div class="dialog-header dialog-header_modal">
+                                                <div class="dialog-header__item">
+                                                    <div class="dialog-header__photo">
+                                                        <img class='avatar' src="img/user-photo_4.png"
+                                                            alt="user-photo">
+                                                    </div>
+                                                </div>
+                                                <div class="dialog-header__item">
+                                                    <div class="dialog-header__info">
+                                                        <h2 class="title dialog-header__title"><a href="#"
+                                                                class="dialog-header__link">David
+                                                                Amrosa</a></h2>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class='dialog__item'>
+                                            <div class="dialog-header dialog-header_modal">
+                                                <div class="dialog-header__item">
+                                                    <div class="dialog-header__photo">
+                                                        <img class='avatar' src="img/user-photo_1.png"
+                                                            alt="user-photo">
+                                                    </div>
+                                                </div>
+                                                <div class="dialog-header__item">
+                                                    <div class="dialog-header__info">
+                                                        <h2 class="title dialog-header__title"><a href="#"
+                                                                class="dialog-header__link">Luy
+                                                                Robin</a></h2>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class='dialog__item'>
+                                            <div class="dialog-header dialog-header_modal">
+                                                <div class="dialog-header__item">
+                                                    <div class="dialog-header__photo">
+                                                        <img class='avatar' src="img/user-photo_2.png"
+                                                            alt="user-photo">
+                                                    </div>
+                                                </div>
+                                                <div class="dialog-header__item">
+                                                    <div class="dialog-header__info">
+                                                        <h2 class="title dialog-header__title"><a href="#"
+                                                                class="dialog-header__link">Jared
+                                                                Sunn</a></h2>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class='dialog__item'>
+                                            <div class="dialog-header dialog-header_modal">
+                                                <div class="dialog-header__item">
+                                                    <div class="dialog-header__photo">
+                                                        <img class='avatar' src="img/user-photo_2.png"
+                                                            alt="user-photo">
+                                                    </div>
+                                                </div>
+                                                <div class="dialog-header__item">
+                                                    <div class="dialog-header__info">
+                                                        <h2 class="title dialog-header__title"><a href="#"
+                                                                class="dialog-header__link">Jared
+                                                                Sunn</a></h2>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class='dialog__item'>
+                                            <div class="dialog-header dialog-header_modal">
+                                                <div class="dialog-header__item">
+                                                    <div class="dialog-header__photo">
+                                                        <img class='avatar' src="img/user-photo_4.png"
+                                                            alt="user-photo">
+                                                    </div>
+                                                </div>
+                                                <div class="dialog-header__item">
+                                                    <div class="dialog-header__info">
+                                                        <h2 class="title dialog-header__title"><a href="#"
+                                                                class="dialog-header__link">David
+                                                                Amrosa</a></h2>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class='dialog__item'>
+                                            <div class="dialog-header dialog-header_modal">
+                                                <div class="dialog-header__item">
+                                                    <div class="dialog-header__photo">
+                                                        <img class='avatar' src="img/user-photo_4.png"
+                                                            alt="user-photo">
+                                                    </div>
+                                                </div>
+                                                <div class="dialog-header__item">
+                                                    <div class="dialog-header__info">
+                                                        <h2 class="title dialog-header__title"><a href="#"
+                                                                class="dialog-header__link">David
+                                                                Amrosa</a></h2>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class='dialog__item'>
+                                            <div class="dialog-header dialog-header_modal">
+                                                <div class="dialog-header__item">
+                                                    <div class="dialog-header__photo">
+                                                        <img class='avatar' src="img/user-photo_1.png"
+                                                            alt="user-photo">
+                                                    </div>
+                                                </div>
+                                                <div class="dialog-header__item">
+                                                    <div class="dialog-header__info">
+                                                        <h2 class="title dialog-header__title"><a href="#"
+                                                                class="dialog-header__link">Luy
+                                                                Robin</a></h2>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class='dialog__item'>
+                                            <div class="dialog-header dialog-header_modal">
+                                                <div class="dialog-header__item">
+                                                    <div class="dialog-header__photo">
+                                                        <img class='avatar' src="img/user-photo_4.png"
+                                                            alt="user-photo">
+                                                    </div>
+                                                </div>
+                                                <div class="dialog-header__item">
+                                                    <div class="dialog-header__info">
+                                                        <h2 class="title dialog-header__title"><a href="#"
+                                                                class="dialog-header__link">David
+                                                                Amrosa</a></h2>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                        <li class='dialog__item'>
+                                            <div class="dialog-header dialog-header_modal">
+                                                <div class="dialog-header__item">
+                                                    <div class="dialog-header__photo">
+                                                        <img class='avatar' src="img/user-photo_1.png"
+                                                            alt="user-photo">
+                                                    </div>
+                                                </div>
+                                                <div class="dialog-header__item">
+                                                    <div class="dialog-header__info">
+                                                        <h2 class="title dialog-header__title"><a href="#"
+                                                                class="dialog-header__link">Luy
+                                                                Robin</a></h2>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="chats-search">
+                <form action="#" class="search-form">
+                    <label for="search-form__input">
+                        <img src="img/sprites/sprite.svg#search" alt="search">
+                        <input type="text" id="search-input" class="search-form__input" placeholder="Search">
+                    </label>
+                    <div class="chats-filter-select dropdown">
+                        <button class="btn btn-secondary dropdown-toggle chats-filter__btn" type="button"
+                            id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                            Messages
+                        </button>
+                        <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                            <li><a class="dropdown-item chats-filter__item" href="#">Unread</a></li>
+                            <li><a class="dropdown-item chats-filter__item" href="#">Starred messages</a></li>
+                        </ul>
+                    </div>
+                </form>
+
+            </div>
+            <div class="chats-body">
+                <ul class="chats-body__list dialog">
+                    <li class='dialog__item'>
+                        <div class="dialog-header">
+                            <div class="dialog-header__item">
+                                <div class="dialog-header__photo dialog-header__photo_online">
+                                    <img class='avatar' src="img/user-photo_1.png" alt="user-photo">
+                                </div>
+                            </div>
+                            <div class="dialog-header__item">
+                                <div class="dialog-header__info">
+                                    <h2 class="title dialog-header__title"><a href="#" class="dialog-header__link">Luy
+                                            Robin</a></h2>
+                                    <span class="dialog-header__date">1 minute ago</span>
+                                    <div class="dialog-header__status">
+                                        <div class="animated">
+                                            <span class="animated__writes animated__writes_1"></span>
+                                            <span class="animated__writes animated__writes_2"></span>
+                                            <span class="animated__writes animated__writes_3"></span>
+                                        </div>
+                                        writes
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dialog-body">
+                            <div class="dialog-body__item">
+                                <p class="dialog-body__text">
+                                    Most of its text is made up from sections 1.10.32–3 of Cicero's De finibus bonorum
+                                    et
+                                    malorum (On the Boundaries of Goods and Evils; finibus may also be translated as
+                                    purposes).
+                                </p>
+                            </div>
+                            <div class="dialog-body__item">
+                                <div class="dialog-body__counter"><span>2</span></div>
+                            </div>
+                        </div>
+                        <div class="dialog-footer"></div>
+                    </li>
+                    <li class='dialog__item'>
+                        <div class="dialog-header">
+                            <div class="dialog-header__item">
+                                <div class="dialog-header__photo dialog-header__photo_online">
+                                    <img class='avatar' src="img/user-photo_2.png" alt="user-photo">
+                                </div>
+                            </div>
+                            <div class="dialog-header__item">
+                                <div class="dialog-header__info">
+                                    <h2 class="title dialog-header__title"><a href="#" class="dialog-header__link">Jared
+                                            Sunn</a></h2>
+                                    <span class="dialog-header__date">1 minute ago</span>
+                                    <div class="dialog-header__status">
+                                        <div class="animated">
+                                            <span class="animated__voice animated__voice_outside">
+                                                <span class="animated__voice animated__voice_inside"></span>
+                                            </span>
+                                        </div>
+                                        records voice message
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dialog-body">
+                            <div class="dialog-body__item">
+                                <p class="dialog-body__text dialog-body__text_voice">
+                                    Voice message (01:15)
+                                </p>
+                            </div>
+                            <div class="dialog-body__item">
+                                <div class="dialog-body__counter"><span>1</span></div>
+                            </div>
+                        </div>
+                        <div class="dialog-footer">
+                            <div class="dialog-attachments">
+                                <div class="dialog-attachment dialog-attachment_files"><img
+                                        class="dialog-attachment__icon" src="img/sprites/sprite.svg#file-text"
+                                        alt="icon-file-text">Files<span>(x2)</span> </div>
+                                <div class="dialog-attachment dialog-attachment_photo"><img
+                                        class="dialog-attachment__icon" src="img/sprites/sprite.svg#icon-file-photo"
+                                        alt="icon-file-text">Photo</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class='dialog__item dialog__item_open'>
+                        <div class="dialog-header">
+                            <div class="dialog-header__item">
+                                <div class="dialog-header__photo">
+                                    <img class='avatar' src="img/user-photo_3.png" alt="user-photo">
+                                </div>
+                            </div>
+                            <div class="dialog-header__item">
+                                <div class="dialog-header__info">
+                                    <h2 class="title dialog-header__title"><a href="#" class="dialog-header__link">Nika
+                                            Jerrardo</a></h2>
+                                    <span class="dialog-header__date dialog-header__date_open">3 days ago</span>
+                                    <div class="dialog-header__status dialog-header__status_open">last online 5 hours
+                                        ago</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dialog-body">
+                            <div class="dialog-body__item">
+                                <p class="dialog-body__text dialog-body__text_open">
+                                    Cicero famously orated against his political opponent Lucius Sergius Catilina.
+                                </p>
+                            </div>
+                            <div class="dialog-body__item"></div>
+                        </div>
+                        <div class="dialog-footer"></div>
+                    </li>
+                    <li class='dialog__item'>
+                        <div class="dialog-header">
+                            <div class="dialog-header__item">
+                                <div class="dialog-header__photo">
+                                    <img class='avatar' src="img/user-photo_4.png" alt="user-photo">
+                                </div>
+                            </div>
+                            <div class="dialog-header__item">
+                                <div class="dialog-header__info">
+                                    <h2 class="title dialog-header__title"><a href="#" class="dialog-header__link">David
+                                            Amrosa</a></h2>
+                                    <span class="dialog-header__date">3 days ago</span>
+                                    <div class="dialog-header__status">last online 5 hours ago</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dialog-body">
+                            <div class="dialog-body__item">
+                                <p class="dialog-body__text">
+                                    Cicero famously orated against his political opponent Lucius Sergius Catilina.
+                                </p>
+                            </div>
+                            <div class="dialog-body__item"></div>
+                        </div>
+                        <div class="dialog-footer">
+                            <div class="dialog-attachments">
+                                <div class="dialog-attachment dialog-attachment_video"><img
+                                        class="dialog-attachment__icon" src="img/sprites/sprite.svg#icon-file-video"
+                                        alt="icon-file-text">Video<span>(x3)</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class='dialog__item'>
+                        <div class="dialog-header">
+                            <div class="dialog-header__item">
+                                <div class="dialog-header__photo dialog-header__photo_online">
+                                    <img class='avatar' src="img/user-photo_1.png" alt="user-photo">
+                                </div>
+                            </div>
+                            <div class="dialog-header__item">
+                                <div class="dialog-header__info">
+                                    <h2 class="title dialog-header__title"><a href="#" class="dialog-header__link">Luy
+                                            Robin</a></h2>
+                                    <span class="dialog-header__date">1 minute ago</span>
+                                    <div class="dialog-header__status">
+                                        <div class="animated">
+                                            <span class="animated__writes animated__writes_1"></span>
+                                            <span class="animated__writes animated__writes_2"></span>
+                                            <span class="animated__writes animated__writes_3"></span>
+                                        </div>
+                                        writes
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dialog-body">
+                            <div class="dialog-body__item">
+                                <p class="dialog-body__text">
+                                    Most of its text is made up from sections 1.10.32–3 of Cicero's De finibus bonorum
+                                    et
+                                    malorum (On the Boundaries of Goods and Evils; finibus may also be translated as
+                                    purposes).
+                                </p>
+                            </div>
+                            <div class="dialog-body__item">
+                                <div class="dialog-body__counter"><span>2</span></div>
+                            </div>
+                        </div>
+                        <div class="dialog-footer"></div>
+                    </li>
+                    <li class='dialog__item'>
+                        <div class="dialog-header">
+                            <div class="dialog-header__item">
+                                <div class="dialog-header__photo dialog-header__photo_online">
+                                    <img class='avatar' src="img/user-photo_2.png" alt="user-photo">
+                                </div>
+                            </div>
+                            <div class="dialog-header__item">
+                                <div class="dialog-header__info">
+                                    <h2 class="title dialog-header__title"><a href="#" class="dialog-header__link">Jared
+                                            Sunn</a></h2>
+                                    <span class="dialog-header__date">1 minute ago</span>
+                                    <div class="dialog-header__status">
+                                        <div class="animated">
+                                            <span class="animated__voice animated__voice_outside">
+                                                <span class="animated__voice animated__voice_inside"></span>
+                                            </span>
+                                        </div>
+                                        records voice message
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dialog-body">
+                            <div class="dialog-body__item">
+                                <p class="dialog-body__text dialog-body__text_voice">
+                                    Voice message (01:15)
+                                </p>
+                            </div>
+                            <div class="dialog-body__item">
+                                <div class="dialog-body__counter"><span>1</span></div>
+                            </div>
+                        </div>
+                        <div class="dialog-footer">
+                            <div class="dialog-attachments">
+                                <div class="dialog-attachment dialog-attachment_files"><img
+                                        class="dialog-attachment__icon" src="img/sprites/sprite.svg#file-text"
+                                        alt="icon-file-text">Files<span>(x2)</span> </div>
+                                <div class="dialog-attachment dialog-attachment_photo"><img
+                                        class="dialog-attachment__icon" src="img/sprites/sprite.svg#icon-file-photo"
+                                        alt="icon-file-text">Photo</div>
+                            </div>
+                        </div>
+                    </li>
+                    <li class='dialog__item'>
+                        <div class="dialog-header">
+                            <div class="dialog-header__item">
+                                <div class="dialog-header__photo">
+                                    <img class='avatar' src="img/user-photo_4.png" alt="user-photo">
+                                </div>
+                            </div>
+                            <div class="dialog-header__item">
+                                <div class="dialog-header__info">
+                                    <h2 class="title dialog-header__title"><a href="#" class="dialog-header__link">David
+                                            Amrosa</a></h2>
+                                    <span class="dialog-header__date">3 days ago</span>
+                                    <div class="dialog-header__status">last online 5 hours ago</div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="dialog-body">
+                            <div class="dialog-body__item">
+                                <p class="dialog-body__text">
+                                    Cicero famously orated against his political opponent Lucius Sergius Catilina.
+                                </p>
+                            </div>
+                            <div class="dialog-body__item"></div>
+                        </div>
+                        <div class="dialog-footer">
+                            <div class="dialog-attachments">
+                                <div class="dialog-attachment dialog-attachment_video"><img
+                                        class="dialog-attachment__icon" src="img/sprites/sprite.svg#icon-file-video"
+                                        alt="icon-file-text">Video<span>(x3)</div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </section>
+        <section class="chat">
+            <div class="chat-header">
+                <div class="chat-header__item">
+                    <div class="chat-photo">
+                        <img class='avatar' src="img/user-photo_3.png" alt="user-photo">
+                    </div>
+                    <div class="chat-info">
+                        <h2 class="title">Nika Jerrardo</h2>
+                        <p class="chat__status">
+                            last online 5 hours ago
+                        </p>
+                    </div>
+                </div>
+                <div class="chat-header__item">
+                    <button class="chat__btn"><img src="img/sprites/sprite.svg#icon-attachment"
+                            alt="icon-attachment"></button>
+                    <button class="chat__btn"><img src="img/sprites/sprite.svg#icon-setting"
+                            alt="icon-setting"></button>
+                </div>
+            </div>
+            <div class="chat-body">
+                <div class="messages">
+                    <div class="message_sent">
+                        <div class="message-items">
+                            <div class="message__item">
+                                <button class="message__btn"><img src="img/sprites/sprite.svg#icon-more-horizontal"
+                                        alt=""></button>
+                                <div class="message__text message__text_sent">Hey! My friend said you need some help.
+                                </div>
+                                <div class="message__status-icon message__status-icon_done"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="message">
+                        <div class="message__photo"><img class='avatar' src="img/user-photo_3.png" alt="user-photo">
+                        </div>
+                        <div class="message-items">
+                            <div class="message__item">
+                                <div class="message__text">Hello! Finally found the time to write to you) I need your
+                                    help
+                                    in creating interactive animations for my mobile application.</div>
+                                <button class="message__btn"><img src="img/sprites/sprite.svg#icon-more-horizontal"
+                                        alt=""></button>
+                            </div>
+                            <div class="message__item">
+                                <div class="message__text">Can I send you files?
+                                </div>
+                                <button class="message__btn"><img src="img/sprites/sprite.svg#icon-more-horizontal"
+                                        alt=""></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="message_sent">
+                        <div class="message-items">
+                            <div class="message__item">
+                                <button class="message__btn"><img src="img/sprites/sprite.svg#icon-more-horizontal"
+                                        alt=""></button>
+                                <div class="message__text message__text_sent">Hey! Okay, send out.</div>
+                                <div class="message__status-icon message__status-icon_done"></div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="message">
+                        <div class="message__photo"><img class='avatar' src="img/user-photo_3.png" alt="user-photo">
+                        </div>
+                        <div class="message-items">
+                            <div class="message__item">
+                                <div class="message__text message__files">
+                                    <a href="#" class="message__files-link__icon"></a>
+                                    <a href="#" class="message__files-link">Style.zip
+                                        <span>41.62 Mb</span>
+                                    </a>
+                                </div>
+                                <button class="message__btn"><img src="img/sprites/sprite.svg#icon-more-horizontal"
+                                        alt=""></button>
+                            </div>
+                        </div>
+                    </div>
+                    <h4 class="message-history-bar"><span>3 days ago</span></h4>
+                    <div class="message_sent">
+                        <div class="message-items">
+                            <div class="message__item">
+                                <button class="message__btn"><img src="img/sprites/sprite.svg#icon-more-horizontal"
+                                        alt=""></button>
+                                <div class="message__text message__text_sent">Hello! I tweaked everything you asked. I
+                                    am sending the finished file.
+                                    <div><a href="#" class="message__files-link__sent">(50.15
+                                                MB) New_Style.zip</a>
+                                    </div>
+                                </div>
+                                <div class="message__status-icon"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <form class="chat-footer" id='chatFooter'>
+                <input type="file" id="fileid">
+                <label for="fileid" class="chat-footer__btn" id='files'><img src="img/sprites/sprite.svg#plus"
+                        alt="icon-plus"></label>
+                <textarea id="chatInput" class="chat-footer__input" placeholder="Type a message here"></textarea>
+
+                <button class="chat-footer__btn chat-footer__btn_smile"><img src="img/sprites/sprite.svg#icon-smile"
+                        alt="icon-smile"></button>
+                <button class="chat-footer__btn"><img src="img/sprites/sprite.svg#icon-send" alt="icon-send"></button>
+            </form>
+        </section>
+    </main>
+    <script src="js/main.js"></script>
+    <script src="js/vendor.js"></script>
+</body>
+
+</html>
